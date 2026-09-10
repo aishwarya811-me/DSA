@@ -1,0 +1,16 @@
+# approach 2
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+
+        int left,right;
+        if(root==NULL)
+            return 0;
+     left =countNodes(root ->left);
+     right = countNodes(root ->right) ;
+     return 1+left+right;
+
+
+
+    }
+};
