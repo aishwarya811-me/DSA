@@ -1,0 +1,25 @@
+#approach 1
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        vector<int> vp,vq;
+        preorder(p,vp);
+        preorder(q,vq);
+        if(vp == vq)
+        return true;
+        else
+        return false;
+    }
+   void preorder(TreeNode*root,vector<int>&v){
+     if (root == NULL)
+     {
+        v.push_back(-10001);
+        return;
+     } else{
+      v.push_back(root -> val);
+    preorder(root->left,v);
+
+    preorder(root->right,v);
+   }
+   }
+};
